@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APICinemaProject.DAL.Models
 {
-    class Order
+    public class Order
     {
         public int OrderID { get; set; } //PK
         public DateTime Date { get; set; }
@@ -14,6 +14,10 @@ namespace APICinemaProject.DAL.Models
         public int productid { get; set; } //FK
         public int customerid { get; set; } //FK
         public bool AgeCheck { get; set; }
+
+        public virtual ICollection<Seat> Seats { get; set; }
+        public virtual ICollection<CandyShop> CandyShops { get; set; }
+
 
 
 
