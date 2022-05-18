@@ -10,14 +10,10 @@ namespace APICinemaProject.DAL.Models
     {
         public int OrderID { get; set; } //PK
         public DateTime Date { get; set; }
-        public int movieid { get; set; } //FK
-        public int productid { get; set; } //FK
-        public int customerid { get; set; } //FK
+        public int MovieID { get; set; } //FK
+        public int ProductID { get; set; } //FK
+        public int CustomerID { get; set; } //FK
         public bool AgeCheck { get; set; }
-
-        public virtual ICollection<Seat> Seats { get; set; }
-        public virtual ICollection<CandyShop> CandyShops { get; set; }
-
 
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APICinemaProject.DAL
 {
-    class Movie
+    public class Movie
     {
         public int MovieID { get; set; } // PK
         public int MoviePlayTime { get; set; }
