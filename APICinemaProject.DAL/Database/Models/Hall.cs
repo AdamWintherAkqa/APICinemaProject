@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APICinemaProject.DAL.Models
 {
-    class Hall
+    public class Hall
     { 
         public int HallID { get; set; } //Pk
         public int MovieID { get; set; } //FK

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace APICinemaProject.DAL.Models
 {
-    class CandyShop
+    public class CandyShop
     {
         public int CandyID { get; set; } //PK
         public string CandyName { get; set; }
