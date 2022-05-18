@@ -12,5 +12,7 @@ namespace APICinemaProject.DAL.Models
         public string CandyName { get; set; }
         public int CandyPrice { get; set; }
         public string CandyType { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

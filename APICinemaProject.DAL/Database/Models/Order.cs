@@ -15,6 +15,8 @@ namespace APICinemaProject.DAL.Models
         public int CustomerID { get; set; } //FK
         public bool AgeCheck { get; set; }
 
+        public virtual ICollection<Seat> Seats { get; set; }
+        public virtual ICollection<CandyShop> CandyShops { get; set; }
 
 
     }

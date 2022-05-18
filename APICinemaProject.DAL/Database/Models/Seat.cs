@@ -11,6 +11,8 @@ namespace APICinemaProject.DAL.Models
         public int SeatID { get; set; } // PK
         public int HallID { get; set; } // FK
         public int SeatNumber { get; set; }
-        public string SeatRowLetter { get; set; } 
+        public string SeatRowLetter { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
