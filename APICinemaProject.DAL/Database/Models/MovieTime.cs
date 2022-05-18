@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace APICinemaProject.DAL.Models
 {
-    class MovieTime
+    public class MovieTime
     {
         public int MovieTimeID { get; set; } //PK
         public int HallID { get; set; } //FK
         public int MovieID { get; set; } //FK
-        public DateTime Time { get; set; } //The time when the movie runs.
+        public DateTime TimeAndDate { get; set; } //The time when the movie runs.
     }
 }

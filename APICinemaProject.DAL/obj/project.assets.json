@@ -5791,7 +5791,11 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
+=======
+      "Microsoft.EntityFrameworkCore >= 5.0.17",
+>>>>>>> e946c2f6eb36bf974501fa6f372c77739823a166
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.17"
     ]
@@ -5841,9 +5845,13 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+=======
+          "Microsoft.EntityFrameworkCore": {
+>>>>>>> e946c2f6eb36bf974501fa6f372c77739823a166
             "target": "Package",
             "version": "[5.0.17, )"
           },
