@@ -23,4 +23,8 @@
     <ProjectReference Include="..\APICinemaProject.DAL\APICinemaProject.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

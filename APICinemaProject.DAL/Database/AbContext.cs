@@ -1,4 +1,5 @@
-﻿using APICinemaProject.DAL.Models;
+﻿using APICinemaProject.DAL.Database.Models;
+using APICinemaProject.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,5 +30,6 @@ namespace APICinemaProject.DAL.Database
         public DbSet<MovieGenre> movieGenres { get; set; }
         public DbSet<Order> orders { get; set; }
         public DbSet<Seat> seats { get; set; }
+        public DbSet<Actor> Actors { get; set; }
     }
 }
