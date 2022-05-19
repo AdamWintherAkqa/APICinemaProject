@@ -24,7 +24,7 @@ namespace APICinemaProject
             services.AddScoped<IActorRepository, ActorRepository>();
             services.AddScoped<ICandyShopRepository, CandyShopRepository>();
             services.AddDbContext<AbContext>();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICinemaProject", Version = "v1" });
@@ -44,6 +44,8 @@ namespace APICinemaProject
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("cors");
 
             app.UseAuthorization();
 

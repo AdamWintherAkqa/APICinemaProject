@@ -16,7 +16,7 @@ namespace APICinemaProject.DAL.Repositories
         Task<Actor> GetActorByID(int id);
         Task<Actor> CreateActor(Actor actor);
         Task<Actor> DeleteActorByID(int id);
-        Task<Actor> UpdateActor(int id, Actor actor);
+        Task<Actor> UpdateActor(Actor actor);
     }
     public class ActorRepository : IActorRepository
     {
@@ -63,30 +63,32 @@ namespace APICinemaProject.DAL.Repositories
                 return null;
             }
         }
-        public async Task<Actor> UpdateActor(int id, Actor actor)
+        public async Task<Actor> UpdateActor(Actor actor)
         {
-            context.Entry(actor).State = EntityState.Modified;
+            //context.Entry(actor).State = EntityState.Modified;
 
-            try
+            //try
+            //{
+            //    await context.SaveChangesAsync();
+
+            //    return actor;
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
+
+            Actor update = await context.Actors.FirstOrDefaultAsync(item => item.ActorID == actor.ActorID);
+            if(update != null)
             {
+                update.ActorName = actor.ActorName;
+                update.MovieID = actor.MovieID;
+
                 await context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ActorExists(id))
-                {
-                    return null;
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return null;
+            return update;
+
         }
-        private bool ActorExists(int id)
-        {
-            return context.Actors.Any(e => e.ActorID == id);
-        }
+        
     }
 }

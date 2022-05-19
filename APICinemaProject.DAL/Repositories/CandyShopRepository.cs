@@ -94,15 +94,3 @@ namespace APICinemaProject.DAL.Repositories
             }
     }
 }
-
-    
-
- 
-            
-
-            
-
-
-
-    
-

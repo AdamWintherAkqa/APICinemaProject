@@ -81,7 +81,34 @@ namespace APICinemaProject.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutActor(int id, Actor actor)
         {
-            
+            try
+            {
+                if (id != actor.ActorID)
+                    return BadRequest("ID Mismatch");
+
+                var actorToUpdate = await context.GetActorByID(id);
+
+                if(actorToUpdate == null)
+                {
+                    return NotFound($"Actor with ID = {id} not found");
+                }
+
+                var result = await context.UpdateActor(actor);
+
+                if (result != null)
+                {
+                    return Ok(actor);
+                }
+                else
+                {
+                    return BadRequest("Null i Repo");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // POST: api/Actors
@@ -95,7 +122,7 @@ namespace APICinemaProject.Controllers
             }
             try
             {
-                await context.CreateActor(Actor);
+                await context.CreateActor(actor);
 
                 return actor;
             }
@@ -131,7 +158,8 @@ namespace APICinemaProject.Controllers
                 return (ActionResult)BadRequest(ex.Message);
             }
         }
-
         
+
+
     }
 }
