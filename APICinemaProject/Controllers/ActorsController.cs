@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APICinemaProject.DAL.Database;
 using APICinemaProject.DAL.Database.Models;
+using APICinemaProject.DAL.Repositories;
 
 namespace APICinemaProject.Controllers
 {
@@ -14,18 +15,40 @@ namespace APICinemaProject.Controllers
     [ApiController]
     public class ActorsController : ControllerBase
     {
-        private readonly AbContext _context;
+        private readonly IActorRepository context;
 
-        public ActorsController(AbContext context)
+        public ActorsController(IActorRepository _context)
         {
-            _context = context;
+            context = _context;
         }
 
         // GET: api/Actors
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
         {
-            return await _context.Actors.ToListAsync();
+            try
+            {
+                List<Actor> result = await context.GetAllActors(); // Ok kan typecast 99% af alt kode whoo!
+                if (result == null)
+                {
+                    return StatusCode(500);
+                }
+
+                if (result.Count == 0)
+                {
+                    return NoContent();
+                }
+
+                else
+                {
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)StatusCode(500, ex);
+            }
         }
 
         // GET: api/Actors/5

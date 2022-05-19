@@ -5797,23 +5797,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nicky\\.nuget\\packages\\": {},
+    "C:\\Users\\winth\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+      "projectUniqueName": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
       "projectName": "APICinemaProject.DAL",
-      "projectPath": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
-      "packagesPath": "C:\\Users\\Nicky\\.nuget\\packages\\",
-      "outputPath": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
+      "projectPath": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+      "packagesPath": "C:\\Users\\winth\\.nuget\\packages\\",
+      "outputPath": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\winth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5872,7 +5872,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
