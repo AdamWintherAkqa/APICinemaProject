@@ -5797,23 +5797,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nisri\\.nuget\\packages\\": {},
+    "C:\\Users\\Nicky\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\H3\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+      "projectUniqueName": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
       "projectName": "APICinemaProject.DAL",
-      "projectPath": "C:\\H3\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
-      "packagesPath": "C:\\Users\\nisri\\.nuget\\packages\\",
-      "outputPath": "C:\\H3\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
+      "projectPath": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+      "packagesPath": "C:\\Users\\Nicky\\.nuget\\packages\\",
+      "outputPath": "C:\\H3Angular\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nisri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nicky\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5875,13 +5875,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\H3\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
