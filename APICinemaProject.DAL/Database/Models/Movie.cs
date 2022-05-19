@@ -12,7 +12,7 @@ namespace APICinemaProject.DAL
         [Key]
         public int MovieID { get; set; } // PK
         public int MoviePlayTime { get; set; }
-
         public int MovieAgeLimit { get; set; }
+        public int InstructorID { get; set; }
     }
 }
