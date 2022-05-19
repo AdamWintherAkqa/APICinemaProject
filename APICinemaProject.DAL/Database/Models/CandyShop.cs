@@ -11,10 +11,10 @@ namespace APICinemaProject.DAL.Models
     public class CandyShop
     {
         [Key]
-        public int CandyID { get; set; } //PK
-        public string CandyName { get; set; }
-        public int CandyPrice { get; set; }
-        public string CandyType { get; set; }
+        public int CandyShopID { get; set; } //PK
+        public string CandyShopName { get; set; }
+        public int CandyShopPrice { get; set; }
+        public string CandyShopType { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }

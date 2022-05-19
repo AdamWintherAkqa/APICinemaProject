@@ -14,11 +14,11 @@ namespace APICinemaProject.Controllers
     [ApiController]
     public class CandyShopsController : ControllerBase
     {
-        private readonly AbContext _context;
+        private readonly ICandyShopRepository context;
 
-        public CandyShopsController(AbContext context)
+        public CandyShopsController(ICandyShopRepository _context)
         {
-            _context = context;
+            context = _context;
         }
 
         // GET: api/CandyShops

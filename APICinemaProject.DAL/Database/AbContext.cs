@@ -20,16 +20,16 @@ namespace APICinemaProject.DAL.Database
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-0IT9HAR;Database=CinemaProject;Trusted_Connection=True;");
         }
 
-        public DbSet<CandyShop> candyShops { get; set; }
-        public DbSet<Customer> customers { get; set; }
-        public DbSet<Genre> genres { get; set; }
-        public DbSet<Hall> halls { get; set; }
-        public DbSet<LoyaltyProgram> loyaltyPrograms { get; set; }
-        public DbSet<Merchandise> merchandises { get; set; }
-        public DbSet<Movie> movies { get; set; }
-        public DbSet<MovieGenre> movieGenres { get; set; }
-        public DbSet<Order> orders { get; set; }
-        public DbSet<Seat> seats { get; set; }
+        public DbSet<CandyShop> CandyShops { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Hall> Halls { get; set; }
+        public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
+        public DbSet<Merchandise> Merchandises { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Seat> Seats { get; set; }
         public DbSet<Actor> Actors { get; set; }
     }
 }

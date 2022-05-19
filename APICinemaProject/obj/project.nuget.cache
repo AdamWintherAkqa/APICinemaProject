@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "hophFMiv6MbEerzAznDn/DGV4XZYLfcMX7PIjJ3njIGSFzCFGkLjcVA0Ccyqh4QuwNfUa++GXPbCe3bxbxsd7A==",
-=======
-  "dgSpecHash": "Id/M3vR4MTjisUrc5zMCKXchX3Bx4kIAUAiDlkfcq5R6KsaOkC6s2yKrEY4rhoQ074K0dk8FJJCkUvtOghTlKA==",
->>>>>>> c801836af1a8bc489cf0a59c3c3a50d71ec7b531
   "success": true,
   "projectFilePath": "C:\\H3Angular\\APICinemaProject\\APICinemaProject\\APICinemaProject.csproj",
   "expectedPackageFiles": [
@@ -142,5 +138,12 @@
     "C:\\Users\\Nicky\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Nicky\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\H3Angular\\APICinemaProject\\APICinemaProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
