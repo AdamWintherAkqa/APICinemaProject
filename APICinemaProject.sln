@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32421.90
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICinemaProject", "APICinemaProject\APICinemaProject.csproj", "{94ADFA3B-7F27-45EF-B333-96C8CE351AB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICinemaProject", "APICinemaProject\APICinemaProject.csproj", "{94ADFA3B-7F27-45EF-B333-96C8CE351AB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICinemaProject.DAL", "APICinemaProject.DAL\APICinemaProject.DAL.csproj", "{58A58605-3CEB-4329-8127-D4491248607E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICinemaProject.DAL", "APICinemaProject.DAL\APICinemaProject.DAL.csproj", "{58A58605-3CEB-4329-8127-D4491248607E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

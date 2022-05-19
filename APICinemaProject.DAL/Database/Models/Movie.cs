@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APICinemaProject.DAL
+namespace APICinemaProject.DAL.Models
 {
     public class Movie
     {
@@ -14,5 +14,7 @@ namespace APICinemaProject.DAL
         public int MoviePlayTime { get; set; }
 
         public int MovieAgeLimit { get; set; }
+
+        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
     }
 }
