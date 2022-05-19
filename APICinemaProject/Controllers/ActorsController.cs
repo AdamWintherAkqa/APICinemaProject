@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using APICinemaProject.DAL.Database;
 using APICinemaProject.DAL.Database.Models;
 using APICinemaProject.DAL.Repositories;
@@ -55,14 +54,26 @@ namespace APICinemaProject.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Actor>> GetActor(int id)
         {
-            var actor = await _context.Actors.FindAsync(id);
-
-            if (actor == null)
+            if (id == 0)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            return actor;
+            try
+            {
+                var actor = context.GetActorByID(id);
+
+                if (actor == null)
+                {
+                    return NotFound();
+                }
+
+                return await actor;
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
         }
 
         // PUT: api/Actors/5
@@ -70,30 +81,7 @@ namespace APICinemaProject.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutActor(int id, Actor actor)
         {
-            if (id != actor.ActorID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(actor).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ActorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            
         }
 
         // POST: api/Actors
@@ -101,31 +89,49 @@ namespace APICinemaProject.Controllers
         [HttpPost]
         public async Task<ActionResult<Actor>> PostActor(Actor actor)
         {
-            _context.Actors.Add(actor);
-            await _context.SaveChangesAsync();
+            if (actor == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                await context.CreateActor(Actor);
 
-            return CreatedAtAction("GetActor", new { id = actor.ActorID }, actor);
+                return actor;
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
         }
 
         // DELETE: api/Actors/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActor(int id)
         {
-            var actor = await _context.Actors.FindAsync(id);
-            if (actor == null)
+            if (id == 0)
             {
-                return NotFound();
+                return BadRequest();
             }
+            try
+            {
+                var response = await context.DeleteActorByID(id);
+                if (response != null)
+                {
+                    return Ok(response);
+                }
+                else
+                {
+                    return NotFound(response);
+                }
 
-            _context.Actors.Remove(actor);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
         }
 
-        private bool ActorExists(int id)
-        {
-            return _context.Actors.Any(e => e.ActorID == id);
-        }
+        
     }
 }
