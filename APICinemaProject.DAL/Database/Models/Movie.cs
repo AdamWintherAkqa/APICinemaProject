@@ -14,7 +14,7 @@ namespace APICinemaProject.DAL.Models
         public int MovieID { get; set; } // PK
         public int MoviePlayTime { get; set; }
         public int MovieAgeLimit { get; set; }
-        public int InstructorID { get; set; }
+        public int InstructorID { get; set; } // FK
 
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }
         public virtual ICollection<Actor> Actors { get; set; }
