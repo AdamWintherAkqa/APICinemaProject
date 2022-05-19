@@ -16,7 +16,7 @@ namespace APICinemaProject.DAL.Database
         //skal udkommenteres hvis repository tests skal virke
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=EGC29749\H2SQLSOMMER;Database=CinemaProject;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0IT9HAR;Database=CinemaProject;Trusted_Connection=True;");
         }
 
         public DbSet<CandyShop> candyShops { get; set; }
