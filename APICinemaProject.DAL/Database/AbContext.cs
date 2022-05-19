@@ -30,6 +30,12 @@ namespace APICinemaProject.DAL.Database
         public DbSet<MovieGenre> MovieGenres { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Seat> Seats { get; set; }
+
+        internal Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Actor> Actors { get; set; }
     }
 }

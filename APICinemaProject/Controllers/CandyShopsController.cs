@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APICinemaProject.DAL.Database;
 using APICinemaProject.DAL.Models;
+using APICinemaProject.DAL.Repositories;
+using APICinemaProject.DAL.Database.Models;
 
 namespace APICinemaProject.Controllers
 {
