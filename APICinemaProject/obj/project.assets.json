@@ -7439,6 +7439,7 @@
       "APICinemaProject.DAL >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.17",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -7502,6 +7503,10 @@
             "target": "Package",
             "version": "[5.0.17, )"
           },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[5.0.17, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -7538,13 +7543,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
