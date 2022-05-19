@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APICinemaProject.DAL.Database.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace APICinemaProject.DAL.Models
         public int MovieAgeLimit { get; set; }
 
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }
+        public virtual ICollection<Actor> Actors { get; set; }
     }
 }
