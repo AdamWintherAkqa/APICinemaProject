@@ -2,23 +2,23 @@
 
 namespace APICinemaProject.DAL.Migrations
 {
-    public partial class _20_05_02 : Migration
+    public partial class proeveradam : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "MovieID",
-                table: "Actors");
+                name: "AgeCheck",
+                table: "Orders");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "MovieID",
-                table: "Actors",
-                type: "int",
+            migrationBuilder.AddColumn<bool>(
+                name: "AgeCheck",
+                table: "Orders",
+                type: "bit",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: false);
         }
     }
 }
