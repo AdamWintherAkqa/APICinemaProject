@@ -15,20 +15,20 @@ namespace APICinemaProject.Controllers
     [ApiController]
     public class CandyShopsController : ControllerBase
     {
-        private readonly IActorRepository context;
+        private readonly ICandyShopRepository context;
 
-        public ActorsController(IActorRepository _context)
+        public CandyShopsController(ICandyShopRepository _context)
         {
             context = _context;
         }
 
         // GET: api/Actors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
+        public async Task<ActionResult<IEnumerable<CandyShop>>> GetActors()
         {
             try
             {
-                List<Actor> result = await context.GetAllActors(); // Ok kan typecast 99% af alt kode whoo!
+                List<CandyShop> result = await context.GetAllCandyShops(); // Ok kan typecast 99% af alt kode whoo!
                 if (result == null)
                 {
                     return StatusCode(500);
@@ -53,7 +53,7 @@ namespace APICinemaProject.Controllers
 
         // GET: api/Actors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Actor>> GetActor(int id)
+        public async Task<ActionResult<CandyShop>> GetActor(int id)
         {
             if (id == 0)
             {
@@ -62,14 +62,14 @@ namespace APICinemaProject.Controllers
 
             try
             {
-                var actor = context.GetActorByID(id);
+                var candyShop = context.GetCandyShopById(id);
 
-                if (actor == null)
+                if (candyShop == null)
                 {
                     return NotFound();
                 }
 
-                return await actor;
+                return await candyShop;
             }
             catch (Exception ex)
             {
@@ -80,25 +80,25 @@ namespace APICinemaProject.Controllers
         // PUT: api/Actors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutActor(int id, Actor actor)
+        public async Task<IActionResult> PutActor(int id, CandyShop candyShop)
         {
             try
             {
-                if (id != actor.ActorID)
+                if (id != candyShop.CandyShopID)
                     return BadRequest("ID Mismatch");
 
-                var actorToUpdate = await context.GetActorByID(id);
+                var actorToUpdate = await context.GetCandyShopById(id);
 
                 if (actorToUpdate == null)
                 {
                     return NotFound($"Actor with ID = {id} not found");
                 }
 
-                var result = await context.UpdateActor(actor);
+                var result = await context.UpdateCandyShop(candyShop);
 
                 if (result != null)
                 {
-                    return Ok(actor);
+                    return Ok(candyShop);
                 }
                 else
                 {
@@ -115,7 +115,7 @@ namespace APICinemaProject.Controllers
         // POST: api/Actors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Actor>> PostActor(Actor actor)
+        public async Task<ActionResult<CandyShop>> PostActor(Actor actor)
         {
             if (actor == null)
             {
