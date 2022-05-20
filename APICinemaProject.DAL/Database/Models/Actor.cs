@@ -13,7 +13,6 @@ namespace APICinemaProject.DAL.Database.Models
         [Key]
         public int ActorID { get; set; } //PK
         public string ActorName { get; set; }
-        public int MovieID { get; set; } //FK
         public virtual ICollection<Movie> Movies { get; set; }
     }
 }
