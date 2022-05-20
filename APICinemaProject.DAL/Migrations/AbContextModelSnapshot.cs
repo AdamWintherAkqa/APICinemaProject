@@ -201,6 +201,8 @@ namespace APICinemaProject.DAL.Migrations
 
                     b.HasIndex("InstructorID");
 
+                    b.HasIndex("InstructorID");
+
                     b.ToTable("Movies");
                 });
 
@@ -344,43 +346,77 @@ namespace APICinemaProject.DAL.Migrations
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Movie", b =>
                 {
+<<<<<<< HEAD
+                    b.HasOne("APICinemaProject.DAL.Models.Genre", null)
+                        .WithMany("Movies")
+                        .HasForeignKey("GenreID");
+
+                    b.HasOne("APICinemaProject.DAL.Database.Models.Instructor", "Instructor")
+=======
                     b.HasOne("APICinemaProject.DAL.Database.Models.Instructor", "instructor")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
+                    b.Navigation("Instructor");
+=======
                     b.Navigation("instructor");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Order", b =>
                 {
+<<<<<<< HEAD
+                    b.HasOne("APICinemaProject.DAL.Models.Customer", "Customer")
+=======
                     b.HasOne("APICinemaProject.DAL.Models.Customer", "customer")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
+                    b.HasOne("APICinemaProject.DAL.Models.Movie", "Movie")
+=======
                     b.HasOne("APICinemaProject.DAL.Models.Movie", "movie")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("MovieID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
+                    b.Navigation("Customer");
+
+                    b.Navigation("Movie");
+=======
                     b.Navigation("customer");
 
                     b.Navigation("movie");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Seat", b =>
                 {
+<<<<<<< HEAD
+                    b.HasOne("APICinemaProject.DAL.Models.Hall", "Hall")
+=======
                     b.HasOne("APICinemaProject.DAL.Models.Hall", "hall")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("HallID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
+                    b.Navigation("Hall");
+=======
                     b.Navigation("hall");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("ActorMovie", b =>
