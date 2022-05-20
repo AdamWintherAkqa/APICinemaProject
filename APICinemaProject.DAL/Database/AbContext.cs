@@ -17,9 +17,11 @@ namespace APICinemaProject.DAL.Database
         //skal udkommenteres hvis repository tests skal virke
         //CPH00151\MSSQLSERVER01 - Adam 1
         //DESKTOP-0IT9HAR - Adam 2
+        //EGC29749\H2SQLSOMMER -- Nicky 1
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=CPH00151\MSSQLSERVER01;Database=CinemaProject;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=EGC29749\H2SQLSOMMER;Database=CinemaProject;Trusted_Connection=True;");
         }
 
         public DbSet<CandyShop> CandyShops { get; set; }

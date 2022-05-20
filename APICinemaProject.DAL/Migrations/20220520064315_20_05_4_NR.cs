@@ -2,7 +2,7 @@
 
 namespace APICinemaProject.DAL.Migrations
 {
-    public partial class _20_05 : Migration
+    public partial class _20_05_4_NR : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
