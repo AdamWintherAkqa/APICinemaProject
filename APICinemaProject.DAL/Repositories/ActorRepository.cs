@@ -83,7 +83,6 @@ namespace APICinemaProject.DAL.Repositories
             if(update != null)
             {
                 update.ActorName = actor.ActorName;
-                update.MovieID = actor.MovieID;
 
                 await context.SaveChangesAsync();
             }

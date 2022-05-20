@@ -4,14 +4,16 @@ using APICinemaProject.DAL.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace APICinemaProject.DAL.Migrations
 {
     [DbContext(typeof(AbContext))]
-    partial class AbContextModelSnapshot : ModelSnapshot
+    [Migration("20220520061026_20_05")]
+    partial class _20_05
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,6 +30,9 @@ namespace APICinemaProject.DAL.Migrations
 
                     b.Property<string>("ActorName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MovieID")
+                        .HasColumnType("int");
 
                     b.HasKey("ActorID");
 
@@ -112,8 +117,6 @@ namespace APICinemaProject.DAL.Migrations
 
                     b.HasKey("HallID");
 
-                    b.HasIndex("MovieID");
-
                     b.ToTable("Halls");
                 });
 
@@ -131,10 +134,6 @@ namespace APICinemaProject.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("LoyaltyID");
-
-                    b.HasIndex("CustomerID");
-
-                    b.HasIndex("OrderID");
 
                     b.ToTable("LoyaltyPrograms");
                 });
@@ -313,36 +312,6 @@ namespace APICinemaProject.DAL.Migrations
                     b.HasIndex("SeatsSeatID");
 
                     b.ToTable("OrderSeat");
-                });
-
-            modelBuilder.Entity("APICinemaProject.DAL.Models.Hall", b =>
-                {
-                    b.HasOne("APICinemaProject.DAL.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Movie");
-                });
-
-            modelBuilder.Entity("APICinemaProject.DAL.Models.LoyaltyProgram", b =>
-                {
-                    b.HasOne("APICinemaProject.DAL.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("APICinemaProject.DAL.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Movie", b =>

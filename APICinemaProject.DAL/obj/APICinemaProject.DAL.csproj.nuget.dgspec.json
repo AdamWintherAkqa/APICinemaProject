@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj": {}
+    "C:\\Users\\adam.winther\\source\\repos\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj": {}
   },
   "projects": {
-    "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj": {
+    "C:\\Users\\adam.winther\\source\\repos\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\adam.winther\\source\\repos\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
         "projectName": "APICinemaProject.DAL",
-        "projectPath": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
-        "packagesPath": "C:\\Users\\winth\\.nuget\\packages\\",
-        "outputPath": "G:\\Skole\\H3 flemming\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
+        "projectPath": "C:\\Users\\adam.winther\\source\\repos\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\APICinemaProject.DAL.csproj",
+        "packagesPath": "C:\\Users\\adam.winther\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adam.winther\\source\\repos\\CinemaProject\\APICinemaProject\\APICinemaProject.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\winth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adam.winther\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.episerver.com/feed/packages.svc": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

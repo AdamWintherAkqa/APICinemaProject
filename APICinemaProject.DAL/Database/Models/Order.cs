@@ -19,7 +19,5 @@ namespace APICinemaProject.DAL.Models
 
         public virtual ICollection<Seat> Seats { get; set; }
         public virtual ICollection<CandyShop> CandyShops { get; set; }
-
-
     }
 }

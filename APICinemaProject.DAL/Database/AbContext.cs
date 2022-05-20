@@ -15,9 +15,11 @@ namespace APICinemaProject.DAL.Database
         public AbContext(DbContextOptions<AbContext> options) : base(options) { }
 
         //skal udkommenteres hvis repository tests skal virke
+        //CPH00151\MSSQLSERVER01 - Adam 1
+        //DESKTOP-0IT9HAR - Adam 2
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0IT9HAR;Database=CinemaProject;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=CPH00151\MSSQLSERVER01;Database=CinemaProject;Trusted_Connection=True;");
         }
 
         public DbSet<CandyShop> CandyShops { get; set; }

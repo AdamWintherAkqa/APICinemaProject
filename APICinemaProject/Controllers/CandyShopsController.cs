@@ -15,95 +15,149 @@ namespace APICinemaProject.Controllers
     [ApiController]
     public class CandyShopsController : ControllerBase
     {
-        //private readonly ICandyShopRepository context;
+        private readonly IActorRepository context;
 
-        //public CandyShopsController(ICandyShopRepository _context)
-        //{
-        //    context = _context;
-        //}
+        public ActorsController(IActorRepository _context)
+        {
+            context = _context;
+        }
 
-        //// GET: api/CandyShops
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<CandyShop>>> GetcandyShops()
-        //{
-        //    return await _context.candyShops.ToListAsync();
-        //}
+        // GET: api/Actors
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
+        {
+            try
+            {
+                List<Actor> result = await context.GetAllActors(); // Ok kan typecast 99% af alt kode whoo!
+                if (result == null)
+                {
+                    return StatusCode(500);
+                }
 
-        //// GET: api/CandyShops/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<CandyShop>> GetCandyShop(int id)
-        //{
-        //    var candyShop = await _context.candyShops.FindAsync(id);
+                if (result.Count == 0)
+                {
+                    return NoContent();
+                }
 
-        //    if (candyShop == null)
-        //    {
-        //        return NotFound();
-        //    }
+                else
+                {
+                    return Ok(result);
+                }
 
-        //    return candyShop;
-        //}
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)StatusCode(500, ex);
+            }
+        }
 
-        //// PUT: api/CandyShops/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutCandyShop(int id, CandyShop candyShop)
-        //{
-        //    if (id != candyShop.CandyID)
-        //    {
-        //        return BadRequest();
-        //    }
+        // GET: api/Actors/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Actor>> GetActor(int id)
+        {
+            if (id == 0)
+            {
+                return BadRequest();
+            }
 
-        //    _context.Entry(candyShop).State = EntityState.Modified;
+            try
+            {
+                var actor = context.GetActorByID(id);
 
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!CandyShopExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+                if (actor == null)
+                {
+                    return NotFound();
+                }
 
-        //    return NoContent();
-        //}
+                return await actor;
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
+        }
 
-        //// POST: api/CandyShops
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<CandyShop>> PostCandyShop(CandyShop candyShop)
-        //{
-        //    _context.candyShops.Add(candyShop);
-        //    await _context.SaveChangesAsync();
+        // PUT: api/Actors/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutActor(int id, Actor actor)
+        {
+            try
+            {
+                if (id != actor.ActorID)
+                    return BadRequest("ID Mismatch");
 
-        //    return CreatedAtAction("GetCandyShop", new { id = candyShop.CandyID }, candyShop);
-        //}
+                var actorToUpdate = await context.GetActorByID(id);
 
-        //// DELETE: api/CandyShops/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteCandyShop(int id)
-        //{
-        //    var candyShop = await _context.candyShops.FindAsync(id);
-        //    if (candyShop == null)
-        //    {
-        //        return NotFound();
-        //    }
+                if (actorToUpdate == null)
+                {
+                    return NotFound($"Actor with ID = {id} not found");
+                }
 
-        //    _context.candyShops.Remove(candyShop);
-        //    await _context.SaveChangesAsync();
+                var result = await context.UpdateActor(actor);
 
-        //    return NoContent();
-        //}
+                if (result != null)
+                {
+                    return Ok(actor);
+                }
+                else
+                {
+                    return BadRequest("Null i Repo");
+                }
+            }
+            catch (Exception)
+            {
 
-        //private bool CandyShopExists(int id)
-        //{
-        //    return _context.candyShops.Any(e => e.CandyID == id);
-        //}
+                throw;
+            }
+        }
+
+        // POST: api/Actors
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Actor>> PostActor(Actor actor)
+        {
+            if (actor == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                await context.CreateActor(actor);
+
+                return actor;
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
+        }
+
+        // DELETE: api/Actors/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteActor(int id)
+        {
+            if (id == 0)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var response = await context.DeleteActorByID(id);
+                if (response != null)
+                {
+                    return Ok(response);
+                }
+                else
+                {
+                    return NotFound(response);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return (ActionResult)BadRequest(ex.Message);
+            }
+        }
     }
 }
