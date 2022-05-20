@@ -188,9 +188,6 @@ namespace APICinemaProject.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("GenreID")
-                        .HasColumnType("int");
-
                     b.Property<int>("InstructorID")
                         .HasColumnType("int");
 
@@ -202,26 +199,11 @@ namespace APICinemaProject.DAL.Migrations
 
                     b.HasKey("MovieID");
 
-                    b.HasIndex("GenreID");
+                    b.HasIndex("InstructorID");
 
                     b.HasIndex("InstructorID");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("APICinemaProject.DAL.Models.MovieGenre", b =>
-                {
-                    b.Property<int>("GenreID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("GenreName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("GenreID");
-
-                    b.ToTable("MovieGenres");
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Order", b =>
@@ -230,9 +212,6 @@ namespace APICinemaProject.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("AgeCheck")
-                        .HasColumnType("bit");
 
                     b.Property<int>("CustomerID")
                         .HasColumnType("int");
@@ -305,19 +284,19 @@ namespace APICinemaProject.DAL.Migrations
                     b.ToTable("CandyShopOrder");
                 });
 
-            modelBuilder.Entity("MovieMovieGenre", b =>
+            modelBuilder.Entity("GenreMovie", b =>
                 {
-                    b.Property<int>("MovieGenresGenreID")
+                    b.Property<int>("GenreID")
                         .HasColumnType("int");
 
                     b.Property<int>("MoviesMovieID")
                         .HasColumnType("int");
 
-                    b.HasKey("MovieGenresGenreID", "MoviesMovieID");
+                    b.HasKey("GenreID", "MoviesMovieID");
 
                     b.HasIndex("MoviesMovieID");
 
-                    b.ToTable("MovieMovieGenre");
+                    b.ToTable("GenreMovie");
                 });
 
             modelBuilder.Entity("OrderSeat", b =>
@@ -367,47 +346,77 @@ namespace APICinemaProject.DAL.Migrations
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Movie", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("APICinemaProject.DAL.Models.Genre", null)
                         .WithMany("Movies")
                         .HasForeignKey("GenreID");
 
                     b.HasOne("APICinemaProject.DAL.Database.Models.Instructor", "Instructor")
+=======
+                    b.HasOne("APICinemaProject.DAL.Database.Models.Instructor", "instructor")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.Navigation("Instructor");
+=======
+                    b.Navigation("instructor");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Order", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("APICinemaProject.DAL.Models.Customer", "Customer")
+=======
+                    b.HasOne("APICinemaProject.DAL.Models.Customer", "customer")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.HasOne("APICinemaProject.DAL.Models.Movie", "Movie")
+=======
+                    b.HasOne("APICinemaProject.DAL.Models.Movie", "movie")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("MovieID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.Navigation("Customer");
 
                     b.Navigation("Movie");
+=======
+                    b.Navigation("customer");
+
+                    b.Navigation("movie");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("APICinemaProject.DAL.Models.Seat", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("APICinemaProject.DAL.Models.Hall", "Hall")
+=======
+                    b.HasOne("APICinemaProject.DAL.Models.Hall", "hall")
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                         .WithMany()
                         .HasForeignKey("HallID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+<<<<<<< HEAD
                     b.Navigation("Hall");
+=======
+                    b.Navigation("hall");
+>>>>>>> 665a07ff65831b887223158b40394508da056fd3
                 });
 
             modelBuilder.Entity("ActorMovie", b =>
@@ -440,11 +449,11 @@ namespace APICinemaProject.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MovieMovieGenre", b =>
+            modelBuilder.Entity("GenreMovie", b =>
                 {
-                    b.HasOne("APICinemaProject.DAL.Models.MovieGenre", null)
+                    b.HasOne("APICinemaProject.DAL.Models.Genre", null)
                         .WithMany()
-                        .HasForeignKey("MovieGenresGenreID")
+                        .HasForeignKey("GenreID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -468,11 +477,6 @@ namespace APICinemaProject.DAL.Migrations
                         .HasForeignKey("SeatsSeatID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("APICinemaProject.DAL.Models.Genre", b =>
-                {
-                    b.Navigation("Movies");
                 });
 #pragma warning restore 612, 618
         }

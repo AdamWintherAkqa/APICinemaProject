@@ -23,6 +23,7 @@ namespace APICinemaProject.DAL.Database
         {
             optionsBuilder.UseSqlServer(@"Server=EGC29749\H2SQLSOMMER;Database=CinemaProject;Trusted_Connection=True;");
         }
+        
 
         public DbSet<CandyShop> CandyShops { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -31,7 +32,6 @@ namespace APICinemaProject.DAL.Database
         public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
         public DbSet<Merchandise> Merchandises { get; set; }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<MovieGenre> MovieGenres { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Seat> Seats { get; set; }
 
