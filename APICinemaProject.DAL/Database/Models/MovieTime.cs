@@ -12,7 +12,9 @@ namespace APICinemaProject.DAL.Models
         [Key]
         public int MovieTimeID { get; set; } //PK
         public int HallID { get; set; } //FK
+        public Hall hall { get; set; }
         public int MovieID { get; set; } //FK
+        public Movie movie { get; set; }
         public DateTime Time { get; set; } //The time when the movie runs.
     }
 }

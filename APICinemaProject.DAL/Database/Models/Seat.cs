@@ -12,6 +12,7 @@ namespace APICinemaProject.DAL.Models
         [Key]
         public int SeatID { get; set; } // PK
         public int HallID { get; set; } // FK
+        public Hall hall { get; set; }
         public int SeatNumber { get; set; }
         public string SeatRowLetter { get; set; }
 
