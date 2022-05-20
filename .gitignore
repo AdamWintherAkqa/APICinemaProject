@@ -453,3 +453,4 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 APICinemaProject.DAL/Database/AbContext.cs
+APICinemaProject.DAL/Database/AbContext.cs
